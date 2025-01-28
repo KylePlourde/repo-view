@@ -46,7 +46,7 @@ window.addEventListener("offline", () => {
 if (!navigator.onLine) noInternetDiv.hidden = true;
 
 async function initMarkdownView(md) {
-  var el = document.createElement("pre");
+  var el = document.createElement("span");
   el.classList.add("markdown");
   // console.log(md);
   el.innerHTML = DOMPurify.sanitize(await marked.parse(md));
@@ -286,7 +286,7 @@ window.gotoPath = async function (
       initMarkdownView(decodeContent(response.data.content));
     } else {
       // normal text file
-      var pre = document.createElement("pre"),
+      var pre = document.createElement("span"),
         code = document.createElement("code"),
         lang = headerName.split(".").at(-1).toLowerCase(),
         txt = decodeContent(response.data.content),
