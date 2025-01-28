@@ -46,7 +46,7 @@ window.addEventListener("offline", () => {
 if (!navigator.onLine) noInternetDiv.hidden = true;
 
 async function initMarkdownView(md) {
-  var el = document.createElement("span");
+  var el = document.createElement("pre");
   el.classList.add("markdown");
   // console.log(md);
   el.innerHTML = DOMPurify.sanitize(await marked.parse(md));
