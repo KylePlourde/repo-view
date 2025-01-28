@@ -286,7 +286,7 @@ window.gotoPath = async function (
       initMarkdownView(decodeContent(response.data.content));
     } else {
       // normal text file
-      var pre = document.createElement("span"),
+      var pre = document.createElement("pre"),
         code = document.createElement("code"),
         lang = headerName.split(".").at(-1).toLowerCase(),
         txt = decodeContent(response.data.content),
